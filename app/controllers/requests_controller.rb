@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
   end
 
   def search
-    @request = Request.where(name: params[:search])
+    @request = Request.where(name: params[:search]).first
     render @request.to_json
   end
 
