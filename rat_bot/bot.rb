@@ -16,6 +16,9 @@ bot = Cinch::Bot.new do
   on :join do |m|
     uri = URI.parse("https://fierce-plains-5493.herokuapp.com/requests/search?search=#{m.user.nick}")
     response = Net::HTTP.get_response(uri)
+    debug("RESPONSE: #{response.code}")
+    return unless response.code == '200'
+
     data = JSON.parse response.body
     string = "Shit the bed boys! #{data['cmdr_name']} (#{data['platform']}) needs fuel! System: #{data['system']}"
     m.channel.send(string)
