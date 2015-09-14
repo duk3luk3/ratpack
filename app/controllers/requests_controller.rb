@@ -26,7 +26,7 @@ class RequestsController < ApplicationController
   def search
     @request = Request.where(cmdr_name: params[:search]).first
     response = {
-      id: @request.id
+      id: @request.id,
       cmdr_name: @request.cmdr_name,
       system: @request.system.name,
       platform: @request.platform,
