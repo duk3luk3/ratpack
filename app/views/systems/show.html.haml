@@ -1,0 +1,41 @@
+.page-header
+  %h1
+    = @system.name
+    %small
+      = "[#{@system.x}, #{@system.y}, #{@system.z}]"
+
+.row
+  .col-sm-4
+    .panel.panel-default
+      .panel-heading
+        %h2 System Data
+      .panel-body
+        %dl.dl-horizontal
+          %dt Faction
+          %dd= @system.faction
+          %dt Population
+          %dd= @system.population
+          %dt Government
+          %dd= @system.government
+          %dt Allegiance
+          %dd= @system.allegiance
+          %dt State
+          %dd= @system.state
+          %dt Primary Economy
+          %dd= @system.primary_economy
+          %dt Needs Permit
+          %dd= @system.needs_permit
+  .col-sm-6
+    .panel.panel-info
+      .panel-heading
+        %h2 System Rescues
+      .panel-body
+        %table#system-requests-table.table.table-striped
+          %thead
+            %tr
+              %td CMDR Name
+              %td Request recieved at
+          - @system.requests.each do |r|
+            %tr
+              %td= r.cmdr_name
+              %td= r.created_at.strftime('%d/%m/%y')

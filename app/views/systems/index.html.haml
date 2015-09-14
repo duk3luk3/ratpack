@@ -1,0 +1,16 @@
+.page-header
+  %h1 
+    Systems
+    .pull-right
+      .row
+        .col-sm-6
+          = text_field_tag 'system-search', '', class: 'search form-control'
+      
+        .col-sm-6
+          = link_to "Import data", import_systems_path, method: 'post', class: 'btn btn-warning btn-lg'
+
+
+
+.row
+  .col-sm-12 
+    

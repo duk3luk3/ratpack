@@ -1,0 +1,30 @@
+.row
+  #request-form.col-sm-6.col-sm-offset-3
+    = form_for Request.new, html: {class: 'form-horizontal'} do |f|
+      .panel.panel-danger
+        .panel-heading
+          %h1 New Request
+        .panel-body
+          .form-group
+            = f.label :cmdr_name, class: 'control-label col-sm-4'
+            .col-sm-8
+              = f.text_field :cmdr_name, class: 'form-control'
+          .form-group
+            = f.label :platform, class: 'control-label col-sm-4'
+            .col-sm-8
+              = f.select :platform, ['PC', 'Xbox'], {}, class: 'form-control'
+          .form-group
+            = f.label :system, class: 'control-label col-sm-4'
+            .col-sm-8
+              = text_field_tag 'system-search', '', class: 'search form-control'
+              = f.hidden_field :system_id
+              %p.help-block
+                System names are
+                %strong CASE SENSITIVE
+          .form-group
+            .col-sm-8.col-sm-offset-4
+              %label
+                = f.check_box :oxygen_timer
+                Is your oxygen timer active?
+        .panel-footer
+          = f.submit 'Get Help', class: 'btn btn-lg btn-primary btn-block'
