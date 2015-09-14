@@ -49825,7 +49825,17 @@ else if ( jQuery ) {
 
 }).call(this);
 (function() {
+  var ready;
 
+  ready = function() {
+    return $('#request-form').focusout(function() {
+      return $('request_system_name').val($('#system-search').val());
+    });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
 
 }).call(this);
 (function() {
