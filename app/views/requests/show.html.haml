@@ -1,5 +1,8 @@
 .page-header
-  %h1= "Request #{@request.id}"
+  %h1
+    = link_to @request.system.name, @request.system
+    %small
+      = "Request #{@request.id}"
 
 .row
   .col-sm-4
