@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
 
   def search
     @request = Request.where(cmdr_name: params[:search]).first
-    render @request.to_json
+    render json: @request.to_json
   end
 
   private 
