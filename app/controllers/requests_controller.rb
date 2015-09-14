@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
       @request = Request.new(request_params)
       @request.system = @system
       @request.save
-      redirect_to action: 'index'
+      redirect_to @request
     else
       redirect_to action: 'index', alert: 'System not found!'
     end
@@ -17,6 +17,10 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Request.all
+  end
+
+  def show
+    @request = Request.find params[:id]
   end
 
   private 
