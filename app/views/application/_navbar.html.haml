@@ -1,0 +1,16 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => "collapse", :target => "#navbar"}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "R.A.T", root_path, :class => "navbar-brand"
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'New Request', new_request_path
+        %li
+          = link_to 'Request Log', requests_path
+   
