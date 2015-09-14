@@ -1,8 +1,8 @@
 .page-header
   %h1
-    = link_to @request.system.name, @request.system
+    = link_to "##{@request.id} - #{@request.system.name}", @request.system
     %small
-      = "Request #{@request.id}"
+      = @request.cmdr_name
 
 .row
   .col-sm-4
