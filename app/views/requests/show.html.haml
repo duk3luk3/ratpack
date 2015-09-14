@@ -21,7 +21,7 @@
           %dt Population
           %dd= @request.system.population
           %dt Government
-          %dd= @system.government
+          %dd= @request.system.government
           %dt Allegiance
           %dd= @request.system.allegiance
           %dt State
@@ -30,5 +30,6 @@
           %dd= @request.system.primary_economy
           %dt Needs Permit
           %dd= @request.system.needs_permit
+
   .col-sm-8
     %iframe{scrolling: 'no', src: "https://widget.mibbit.com/?settings=af91045948d571fbddb06aaa1aa3e012&server=irc.ca.us.mibbit.net%3A%2B6697&channel=%23Five0h0ne_test&nick=#{@request.cmdr_name}", width: '800', height: '400'}
