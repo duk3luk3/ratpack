@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   
   resources :requests do
-    colleciton do
+    collection do
       get :search
     end
   end
