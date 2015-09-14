@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
 
   def search
     @request = Request.where(cmdr_name: params[:search]).first
-    unless request.nil?
+    unless @request.nil?
       response = {
         id: @request.id,
         cmdr_name: @request.cmdr_name,
