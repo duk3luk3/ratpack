@@ -2,7 +2,13 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
-  resources :requests
+  
+  resources :requests do
+    colleciton do
+      get :search
+    end
+  end
+
   resources :systems do
     collection do
       post :import

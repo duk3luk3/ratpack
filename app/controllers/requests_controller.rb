@@ -23,6 +23,11 @@ class RequestsController < ApplicationController
     @request = Request.find params[:id]
   end
 
+  def search
+    @request = Request.where(name: params[:search])
+    render @request.to_json
+  end
+
   private 
 
   def request_params
