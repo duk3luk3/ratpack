@@ -28,7 +28,7 @@ class RequestsController < ApplicationController
     response = {
       cmdr_name: @request.cmdr_name,
       system: @request.system.name,
-      platform: @request.platform
+      platform: @request.platform,
       emergency: @request.oxygen_timer,
       request_id: @request.id
     }
