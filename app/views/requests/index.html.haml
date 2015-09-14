@@ -24,7 +24,7 @@
           %tbody
             - @requests.each do |request|
               %tr
-                %td= request.cmdr_name
+                %td= link_to request.cmdr_name, request
                 %td= request.platform
                 %td= link_to request.system.name, request.system unless request.system.nil?
                 %td= request.oxygen_timer
